@@ -32,7 +32,7 @@ def precipitation():
     data = engine.execute("SELECT date, prcp FROM measurement")
     data_dict = dict()
     for record in data:
-        data_dict[record[0]] = list(record[1])
+        data_dict[record[0]] = record[1]
     print(data_dict)
     return jsonify(data_dict)
 
